@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+    <h3 class="text-center">註冊</h3>
+<form method="POST" action="" class="row g-3">
+    {% csrf_token %}
+    <label class="form-label">{{ form.username.label }}</label>
+    {{ form.username }}
+    <label class="form-label">{{ form.email.label }}</label>
+    {{ form.email }}
+    <label class="form-label">{{ form.password1.label }}</label>
+    {{ form.password1 }}
+    <label class="form-label">{{ form.password2.label }}</label>
+    {{ form.password2 }}
+    <input type="submit" name="Create User">
+</form>
+    </div>
+{% endblock %}
