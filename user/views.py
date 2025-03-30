@@ -48,3 +48,10 @@ def logout_page(request):
     logout(request)
     return redirect('login')
 
+
+def recognition_page(request):
+    return render(request, 'recognition.html')
+
+
+def record_page(request):
+    return render(request, 'record.html')

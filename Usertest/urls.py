@@ -20,7 +20,7 @@ from django.urls import path
 
 from django.contrib.auth.views import LoginView
 
-from user.views import index_page, login_page, register_page, logout_page
+from user.views import index_page, login_page, register_page, logout_page, recognition_page, record_page
 
 app_name = 'users'
 
@@ -29,5 +29,7 @@ urlpatterns = [
     path("",index_page, name="index"),
     path("login/",login_page,name="login"),
     path("register/",register_page,name="register"),
-    path("logout",logout_page,name="logout"),
+    path("logout/",logout_page,name="logout"),
+    path("recognition/",recognition_page,name="recognition"),
+    path("record/",record_page,name="record"),
 ]

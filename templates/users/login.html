@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container">
+    <div class="container-fluid">
+    <div class="border p-4 rounded shadow">
     <h3 class="text-center">登入</h3>
 <form method="POST" class="row g-3">
     {% csrf_token %}
@@ -20,5 +21,6 @@
     {% for message in messages %}
     <p class= "text-center">{{message}}</p>
   {% endfor %}
+    </div>
     </div>
 {% endblock %}

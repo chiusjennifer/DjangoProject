@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+    <div class="border p-4 rounded shadow">
+    <form class="row g-3">
+        <h3 style="text-align: center">基本身體質量紀錄</h3>
+        <hr>
+        <div class="col-md-6">
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="gender1">
+            <label class="form-check-label" for="gender1">男</label>
+</div>
+        </div>
+        <div class="col-md-6">
+                   <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="gender2">
+            <label class="form-check-label" for="gender2">女</label>
+</div>
+        </div>
+  <div class="col-md-6">
+    <label for="inputHeight" class="form-label">身高</label>
+    <input type="number" class="form-control" id="inputHeight">
+  </div>
+  <div class="col-md-6">
+    <label for="inputWeight" class="form-label">體重</label>
+    <input type="number" class="form-control" id="inputWeight">
+  </div>
+  <div class="col-md-6">
+    <label for="inputAge" class="form-label">年齡</label>
+    <input type="number" class="form-control" id="inputAge">
+  </div>
+  <div class="col-md-6">
+    <label for="inputDisease" class="form-label">有無特殊疾病</label>
+
+    <!-- 無 -->
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="diseaseOption" id="noDisease" onclick="toggleSelect()" checked>
+        <label class="form-check-label" for="noDisease">無</label>
+    </div>
+
+    <!-- 有 -->
+    <div class="form-check d-flex align-items-center">
+        <input class="form-check-input me-2" type="radio" name="diseaseOption" id="yesDisease" onclick="toggleSelect()">
+        <label class="form-check-label me-2" for="yesDisease">有</label>
+        <select id="diseaseSelect" class="form-select" style="width: 150px;" disabled>
+            <option value="">請選擇</option>
+            <option value="糖尿病">糖尿病</option>
+            <option value="高血壓">高血壓</option>
+            <option value="過敏">過敏</option>
+        </select>
+    </div>
+</div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">平均每週運動量</label>
+    <select id="diseaseSelect" class="form-select">
+            <option value="">請選擇</option>
+            <option value="輕度">輕度</option>
+            <option value="中度">中度</option>
+            <option value="重度">重度</option>
+        </select>
+  </div>
+  <div class="col-12" style="text-align: center">
+    <button type="submit" class="btn btn-primary">儲存</button>
+  </div>
+</form>
+    </div>
+    </div>
+    <script>
+function toggleSelect() {
+    let diseaseSelect = document.getElementById("diseaseSelect");
+    let yesDisease = document.getElementById("yesDisease");
+    
+    // 當選擇 "有" 時啟用，選擇 "無" 時禁用
+    diseaseSelect.disabled = !yesDisease.checked;
+}
+</script>
+{% endblock %}
