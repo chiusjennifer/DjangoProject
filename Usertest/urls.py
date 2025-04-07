@@ -17,10 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-
-from django.contrib.auth.views import LoginView
-
-from user.views import index_page, login_page, register_page, logout_page, recognition_page, record_page
+from user.views import index_page, login_page, register_page, logout_page, record_page,classify_food
 
 app_name = 'users'
 
@@ -30,6 +27,6 @@ urlpatterns = [
     path("login/",login_page,name="login"),
     path("register/",register_page,name="register"),
     path("logout/",logout_page,name="logout"),
-    path("recognition/",recognition_page,name="recognition"),
+    path("classify/", classify_food, name="classify"),
     path("record/",record_page,name="record"),
 ]
