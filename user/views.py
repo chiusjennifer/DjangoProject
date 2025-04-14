@@ -56,7 +56,16 @@ def logout_page(request):
 ###
 def classify_food(request):
     predicted_class = None  # 預設值，避免未定義錯誤
-
+    translation_dict = {
+        'bawan': '肉圓',
+        'beef_noodles': '牛肉麵',
+        'beef_soup': '牛肉湯',
+        'bitter_melon_with_salted_eggs':'鹹蛋苦瓜',
+        'braised_napa_cabbage':'紅燒大白菜',
+        'braised_pork_over_rice':'紅燒肉飯',
+        'brown_sugar_cake':'紅糖蛋糕',
+        
+    }
     if request.method == 'POST' and 'food_image' in request.FILES:
         # Read image file
         food_image = request.FILES['food_image'].read()
